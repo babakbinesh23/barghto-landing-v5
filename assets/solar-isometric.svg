@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="240" height="200" role="img" aria-label="نمای ایزومتریک خانه، پنل خورشیدی و خورشید">
+  <defs>
+    <linearGradient id="houseRoof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="houseWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="sunGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </radialGradient>
+  </defs>
+
+  <!-- خورشید و ذرات نور -->
+  <circle cx="200" cy="34" r="22" fill="url(#sunGlow2)"/>
+  <g fill="#fbbf24" opacity="0.85">
+    <circle cx="168" cy="60" r="2.5"/>
+    <circle cx="182" cy="78" r="1.8"/>
+    <circle cx="150" cy="46" r="1.6"/>
+    <circle cx="210" cy="70" r="2"/>
+  </g>
+
+  <!-- بدنه خانه (ایزومتریک) -->
+  <polygon points="40,120 90,95 140,120 90,145" fill="url(#houseWall)"/>
+  <polygon points="40,120 40,165 90,190 90,145" fill="#111827"/>
+  <polygon points="140,120 140,165 90,190 90,145" fill="#1e293b"/>
+
+  <!-- سقف با پنل خورشیدی -->
+  <polygon points="30,112 90,85 150,112 90,139" fill="url(#houseRoof)"/>
+  <g stroke="#bae6fd" stroke-width="1" opacity="0.85">
+    <line x1="50" y1="108" x2="90" y2="127"/>
+    <line x1="70" y1="99" x2="110" y2="118"/>
+    <line x1="40" y1="113" x2="140" y2="113"/>
+    <line x1="55" y1="105" x2="125" y2="105"/>
+  </g>
+
+  <!-- درب -->
+  <rect x="78" y="155" width="16" height="28" fill="#334155"/>
+</svg>
