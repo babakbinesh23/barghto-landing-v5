@@ -11,6 +11,9 @@
 </head>
 <body>
 
+<!-- پرش به محتوای اصلی -->
+<a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
 <!-- نوار پیشرفت اسکرول -->
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -18,17 +21,22 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="#hero" class="logo">برق<span>تو</span></a>
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <a href="#calculator">ماشین‌حساب درآمد</a>
       <a href="#review">بررسی رایگان</a>
       <a href="#compare">چرا برقتو</a>
       <a href="#faq">سوالات متداول</a>
     </nav>
-    <a href="#review" class="btn btn-primary btn-small">همکاری با برقتو</a>
+    <a href="#review" class="btn btn-primary btn-small nav-cta">همکاری با برقتو</a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="باز کردن منو">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
   <!-- سکشن اول: Hero با پس‌زمینه Mesh Gradient به سبک Stripe -->
   <section id="hero" class="hero">
@@ -63,8 +71,8 @@
         <p>اکنون همه نیروگاه‌های خورشیدی می‌توانند از ظرفیت‌های جدید بازار برق برای فروش انرژی خود استفاده کنند.</p>
       </div>
       <ul class="banner-list">
-        <li><span class="check">✓</span> امکان فروش از طریق تجمیع‌کننده</li>
-        <li><span class="check">✓</span> درآمد بالاتر نسبت به خرید تضمینی در بسیاری از شرایط بازار</li>
+        <li><span class="check" aria-hidden="true">✓</span> امکان فروش از طریق تجمیع‌کننده</li>
+        <li><span class="check" aria-hidden="true">✓</span> درآمد بالاتر نسبت به خرید تضمینی در بسیاری از شرایط بازار</li>
       </ul>
     </div>
   </section>
@@ -84,7 +92,7 @@
               <label for="capacity">ظرفیت نیروگاه</label>
               <div class="input-with-unit">
                 <input type="number" id="capacity" min="1" step="0.1" placeholder="مثلاً ۵۰" required>
-                <select id="capacity-unit">
+                <select id="capacity-unit" aria-label="واحد ظرفیت نیروگاه">
                   <option value="kw">کیلووات</option>
                   <option value="mw">مگاوات</option>
                 </select>
@@ -213,7 +221,7 @@
       <div class="glass-card video-box fade-in" data-delay="120">
         <!-- TODO: جایگزینی با ویدیوی نهایی معرفی محصول -->
         <div class="video-placeholder">
-          <span class="play-icon">▶</span>
+          <span class="play-icon" aria-hidden="true">▶</span>
           <span>ویدیوی معرفی برقتو</span>
         </div>
       </div>
@@ -260,36 +268,36 @@
       </div>
       <div class="faq-list fade-in">
         <div class="faq-item">
-          <button class="faq-question">آیا نیروگاه من شرایط همکاری با برقتو را دارد؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>تمامی نیروگاه‌های تجدیدپذیر متصل به شبکه توزیع می‌توانند شرایط همکاری با برقتو را بررسی کنند. پس از ثبت درخواست، وضعیت فنی و قراردادی نیروگاه توسط کارشناسان ما ارزیابی می‌شود.</p></div>
+          <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">آیا نیروگاه من شرایط همکاری با برقتو را دارد؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1"><p>تمامی نیروگاه‌های تجدیدپذیر متصل به شبکه توزیع می‌توانند شرایط همکاری با برقتو را بررسی کنند. پس از ثبت درخواست، وضعیت فنی و قراردادی نیروگاه توسط کارشناسان ما ارزیابی می‌شود.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">حداقل ظرفیت نیروگاه برای همکاری چقدر است؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>برقتو امکان بررسی نیروگاه‌های خورشیدی از ۵ کیلووات تا ۱ مگاوات را فراهم کرده است. شرایط همکاری بر اساس ظرفیت و وضعیت نیروگاه بررسی می‌شود.</p></div>
+          <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">حداقل ظرفیت نیروگاه برای همکاری چقدر است؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2"><p>برقتو امکان بررسی نیروگاه‌های خورشیدی از ۵ کیلووات تا ۱ مگاوات را فراهم کرده است. شرایط همکاری بر اساس ظرفیت و وضعیت نیروگاه بررسی می‌شود.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">آیا نیروگاه‌های خانگی هم می‌توانند برق خود را از طریق برقتو بفروشند؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>بله. یکی از اهداف مدل تجمیع‌کنندگی، ایجاد امکان دسترسی نیروگاه‌های کوچک و خانگی به بازار برق است؛ موضوعی که پیش از این برای بسیاری از این نیروگاه‌ها امکان‌پذیر نبود.</p></div>
+          <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">آیا نیروگاه‌های خانگی هم می‌توانند برق خود را از طریق برقتو بفروشند؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3"><p>بله. یکی از اهداف مدل تجمیع‌کنندگی، ایجاد امکان دسترسی نیروگاه‌های کوچک و خانگی به بازار برق است؛ موضوعی که پیش از این برای بسیاری از این نیروگاه‌ها امکان‌پذیر نبود.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">آیا برای همکاری با برقتو باید عضو بورس انرژی باشم؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>خیر. فرآیندهای مربوط به عرضه برق در بازار توسط برقتو مدیریت می‌شود و در بسیاری از مدل‌های همکاری، نیازی به عضویت مستقیم مالک نیروگاه در بورس انرژی وجود ندارد.</p></div>
+          <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">آیا برای همکاری با برقتو باید عضو بورس انرژی باشم؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4"><p>خیر. فرآیندهای مربوط به عرضه برق در بازار توسط برقتو مدیریت می‌شود و در بسیاری از مدل‌های همکاری، نیازی به عضویت مستقیم مالک نیروگاه در بورس انرژی وجود ندارد.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">آیا برای همکاری با برقتو به تجهیزات جدید نیاز دارم؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>خیر. در صورتی که نیروگاه شما تکمیل شده و در حال تولید برق باشد، معمولاً نیازی به نصب تجهیزات جدید یا ایجاد تغییرات فنی وجود نخواهد داشت.</p></div>
+          <button class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">آیا برای همکاری با برقتو به تجهیزات جدید نیاز دارم؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5"><p>خیر. در صورتی که نیروگاه شما تکمیل شده و در حال تولید برق باشد، معمولاً نیازی به نصب تجهیزات جدید یا ایجاد تغییرات فنی وجود نخواهد داشت.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">اگر نیروگاه من هنوز در حال ساخت باشد چه می‌شود؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>درخواست شما قابل ثبت است، اما شروع همکاری پس از تکمیل نیروگاه و آماده بودن آن برای تزریق برق به شبکه انجام خواهد شد.</p></div>
+          <button class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">اگر نیروگاه من هنوز در حال ساخت باشد چه می‌شود؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6"><p>درخواست شما قابل ثبت است، اما شروع همکاری پس از تکمیل نیروگاه و آماده بودن آن برای تزریق برق به شبکه انجام خواهد شد.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">تسویه درآمد نیروگاه چگونه انجام می‌شود؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>تسویه‌ها مطابق مفاد قرارداد همکاری و در دوره‌های مشخص انجام می‌شود. اطلاعات مربوط به فروش برق و تسویه‌ها نیز به‌صورت شفاف در اختیار نیروگاه قرار خواهد گرفت.</p></div>
+          <button class="faq-question" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">تسویه درآمد نیروگاه چگونه انجام می‌شود؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7"><p>تسویه‌ها مطابق مفاد قرارداد همکاری و در دوره‌های مشخص انجام می‌شود. اطلاعات مربوط به فروش برق و تسویه‌ها نیز به‌صورت شفاف در اختیار نیروگاه قرار خواهد گرفت.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">همکاری با برقتو چگونه آغاز می‌شود؟<span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>پس از ثبت درخواست، کارشناسان برقتو اطلاعات نیروگاه را بررسی می‌کنند. در صورت احراز شرایط، مدل همکاری پیشنهاد شده و پس از عقد قرارداد، فرآیند فروش برق نیروگاه از طریق برقتو آغاز می‌شود.</p></div>
+          <button class="faq-question" id="faq-q8" aria-expanded="false" aria-controls="faq-a8">همکاری با برقتو چگونه آغاز می‌شود؟<span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-answer" id="faq-a8" role="region" aria-labelledby="faq-q8"><p>پس از ثبت درخواست، کارشناسان برقتو اطلاعات نیروگاه را بررسی می‌کنند. در صورت احراز شرایط، مدل همکاری پیشنهاد شده و پس از عقد قرارداد، فرآیند فروش برق نیروگاه از طریق برقتو آغاز می‌شود.</p></div>
         </div>
       </div>
 

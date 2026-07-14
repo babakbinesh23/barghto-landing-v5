@@ -62,9 +62,40 @@ function setupFaq() {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
       const wasOpen = item.classList.contains("open");
-      document.querySelectorAll(".faq-item.open").forEach((i) => i.classList.remove("open"));
-      if (!wasOpen) item.classList.add("open");
+      document.querySelectorAll(".faq-item.open").forEach((i) => {
+        i.classList.remove("open");
+        i.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+      });
+      if (!wasOpen) {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      }
     });
+  });
+}
+
+// ۵) منوی موبایل (همبرگری)
+function setupMobileNav() {
+  const toggle = document.getElementById("nav-toggle");
+  const nav = document.getElementById("main-nav");
+  if (!toggle || !nav) return;
+
+  function closeNav() {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeNav);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeNav();
   });
 }
 
@@ -133,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFadeIn();
   setupScrollProgress();
   setupFaq();
+  setupMobileNav();
   setupCalculator();
   setupReviewForm();
 });
